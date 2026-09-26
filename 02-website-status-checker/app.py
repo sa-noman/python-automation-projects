@@ -28,7 +28,7 @@ def main() -> None:
     print(f"Status: {result['status'] if result['status'] is not None else 'ERROR'}")
     print(f"Reachable: {'yes' if result['ok'] else 'no'}")
     print(f"Response time: {result['response_ms']} ms")
-    if result['final_url'] && result['final_url'] != result['url']:
+    if result['final_url'] and result['final_url'] != result['url']:
         print(f"Final URL: {result['final_url']}")
     if result['error']:
         print(f"Error: {result['error']}")
