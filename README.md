@@ -1,5 +1,9 @@
 # Python Automation Projects
 
+[![Tests](https://github.com/sa-noman/python-automation-projects/actions/workflows/tests.yml/badge.svg)](https://github.com/sa-noman/python-automation-projects/actions/workflows/tests.yml)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Automation](https://img.shields.io/badge/Focus-Automation-6C63FF)
+
 A compact collection of practical Python automation tools for everyday file management, website checks, RSS collection, and public API data retrieval.
 
 ## Projects
@@ -15,7 +19,8 @@ A compact collection of practical Python automation tools for everyday file mana
 
 - Python 3.10+
 - `requests`
-- Standard library modules such as `pathlib`, `argparse`, `json`, and `shutil`
+- Standard library modules including `pathlib`, `argparse`, `json`, `urllib`, and `shutil`
+- GitHub Actions for automated testing
 
 ## Getting Started
 
@@ -27,7 +32,11 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-On Windows PowerShell, activate with `.venv\Scripts\Activate.ps1`.
+On Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
 ## Quick Examples
 
@@ -38,19 +47,40 @@ python 03-rss-news-collector/app.py https://example.com/feed.xml --limit 5
 python 04-api-data-fetcher/app.py https://api.github.com/repos/python/cpython
 ```
 
-## Safety
-
-The file organizer supports `--dry-run` so moves can be reviewed first. None of these tools require secrets or store credentials.
-
 ## Tests
+
+The repository is automatically tested on Python 3.10, 3.11, and 3.12 with GitHub Actions.
+
+Run the same test suite locally:
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
+## Safety
+
+- The File Organizer supports `--dry-run` so changes can be reviewed before files are moved.
+- No passwords, API keys, tokens, or credentials are required or stored.
+- Network tools use timeouts and basic error handling.
+
+## Repository Structure
+
+```text
+python-automation-projects/
+├── 01-file-organizer/
+├── 02-website-status-checker/
+├── 03-rss-news-collector/
+├── 04-api-data-fetcher/
+├── tests/
+├── .github/workflows/tests.yml
+├── .gitignore
+├── requirements.txt
+└── README.md
+```
+
 ## Future Ideas
 
-- Duplicate file finder
-- Scheduled website monitor
-- CSV report generator
-- Batch image renamer
+- Duplicate File Finder
+- Scheduled Website Monitor
+- CSV Report Generator
+- Batch Image Renamer
